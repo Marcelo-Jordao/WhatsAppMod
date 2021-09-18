@@ -6,9 +6,9 @@ license="Academic Free License v3.0"
 modId="whatsappmod"
 version="1.0.0"
 displayName="WhatsAppMod"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
+credits="credits to eclipse"
 displayURL="https://mcreator.net"
-authors="USER, MCreator"
+authors="Marelo"
 
 [[dependencies.whatsappmod]]
     modId="minecraft"
