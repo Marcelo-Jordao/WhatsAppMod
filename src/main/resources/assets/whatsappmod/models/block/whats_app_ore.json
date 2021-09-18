@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "whatsappmod:blocks/whatsapp",
+    "up": "whatsappmod:blocks/whatsapplogo",
+    "north": "whatsappmod:blocks/whatsapp",
+    "east": "whatsappmod:blocks/whatsapp",
+    "south": "whatsappmod:blocks/whatsapp",
+    "west": "whatsappmod:blocks/whatsapp",
+    "particle": "whatsappmod:blocks/whatsapp"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "group": "whatsappmod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "whatsappmod:whats_app"
+    },
+    "2": {
+      "item": "whatsappmod:whats_app"
+    },
+    "3": {
+      "item": "whatsappmod:whats_app"
+    },
+    "5": {
+      "item": "whatsappmod:whats_app"
+    }
+  },
+  "result": {
+    "item": "whatsappmod:whats_armor_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "WhatsApp",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_app",
+      "path": "~/OreRelated"
+    },
+    {
+      "name": "WhatsAppOre",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_app_ore",
+      "path": "~/OreRelated"
+    },
+    {
+      "name": "WhatsAppOreToIngot",
+      "type": "recipe",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_app_ore_to_ingot",
+      "path": "~/OreRelated"
+    },
+    {
+      "name": "WhatsAppMod",
+      "type": "tab",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_app_mod"
+    },
+    {
+      "name": "WhatsPickaxe",
+      "type": "tool",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_pickaxe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsAxe",
+      "type": "tool",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_axe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsSword",
+      "type": "tool",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_sword",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsShovel",
+      "type": "tool",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_shovel",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsHoe",
+      "type": "tool",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_hoe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsPickaxeRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_pickaxe_recipe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsAxeRecipe",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_axe_recipe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsSwordRecipe",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_sword_recipe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsShovelRecipe",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_shovel_recipe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsHoeRecipe",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_hoe_recipe",
+      "path": "~/WhatsAppTools"
+    },
+    {
+      "name": "WhatsArmor",
+      "type": "armor",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/ArmorRelated"
+    },
+    {
+      "name": "WhatsArmorHelmetRecipe",
+      "type": "recipe",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_armor_helmet_recipe",
+      "path": "~/ArmorRelated"
+    },
+    {
+      "name": "WhatsArmorBodyRecipe",
+      "type": "recipe",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_armor_body_recipe",
+      "path": "~/ArmorRelated"
+    },
+    {
+      "name": "WhatsArmorLeggingsRecipe",
+      "type": "recipe",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_armor_leggings_recipe",
+      "path": "~/ArmorRelated"
+    },
+    {
+      "name": "WhatsArmorBootsRecipe",
+      "type": "recipe",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "whats_armor_boots_recipe",
+      "path": "~/ArmorRelated"
+    },
+    {
+      "name": "Cellphone",
+      "type": "item",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cellphone",
+      "path": "~/CellphoneRelated"
+    },
+    {
+      "name": "CellphoneGUI",
+      "type": "gui",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "cellphone_gui",
+      "path": "~/CellphoneRelated"
+    },
+    {
+      "name": "GuiIsOpen",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "gui_is_open",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/CellphoneRelated"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.whatsappmod.whats_app": "Whats App",
+      "item.whatsappmod.cellphone": "Cellphone",
+      "item.whatsappmod.whats_pickaxe": "Whats Pickaxe",
+      "item.whatsappmod.whats_armor_chestplate": "WhatsApp Chestplate",
+      "item.whatsappmod.whats_hoe": "Whats Hoe",
+      "item.whatsappmod.whats_armor_leggings": "WhatsApp Leggings",
+      "item.whatsappmod.whats_armor_helmet": "WhatsApp Helmet",
+      "block.whatsappmod.whats_app_ore": "Whats App Ore",
+      "item.whatsappmod.whats_sword": "Whats Sword",
+      "item.whatsappmod.whats_shovel": "Whats Shovel",
+      "item.whatsappmod.whats_axe": "Whats Axe",
+      "item.whatsappmod.whats_armor_boots": "WhatsApp Boots",
+      "itemGroup.tabwhats_app_mod": "Whats App Mod"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "OreRelated",
+        "children": []
+      },
+      {
+        "name": "WhatsAppTools",
+        "children": []
+      },
+      {
+        "name": "ArmorRelated",
+        "children": []
+      },
+      {
+        "name": "CellphoneRelated",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "whatsappmod",
+    "modName": "WhatsAppMod",
+    "version": "1.0.0",
+    "author": "USER, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.whatsappmod",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100236710
+}

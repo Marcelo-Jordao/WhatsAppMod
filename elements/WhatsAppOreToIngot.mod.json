@@ -1,0 +1,20 @@
+{
+  "_fv": 24,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "xpReward": 256.0,
+    "cookingTime": 150,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:WhatsAppOre"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:WhatsApp"
+    },
+    "name": "whats_app_ore_to_ingot",
+    "namespace": "mod"
+  }
+}
