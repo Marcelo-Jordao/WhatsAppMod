@@ -1,0 +1,12 @@
+{
+  "group": "whatsappmod",
+  "type": "minecraft:smelting",
+  "experience": 256,
+  "cookingtime": 150,
+  "ingredient": {
+    "item": "whatsappmod:whats_app_ore"
+  },
+  "result": {
+    "item": "whatsappmod:whats_app"
+  }
+}

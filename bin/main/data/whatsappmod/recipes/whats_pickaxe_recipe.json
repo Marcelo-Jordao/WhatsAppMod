@@ -1,0 +1,30 @@
+{
+  "group": "whatsappmod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "whatsappmod:whats_app"
+    },
+    "1": {
+      "item": "whatsappmod:whats_app"
+    },
+    "2": {
+      "item": "whatsappmod:whats_app"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "whatsappmod:whats_pickaxe",
+    "count": 1
+  }
+}

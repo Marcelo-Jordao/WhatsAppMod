@@ -80,6 +80,7 @@ public class CellphoneGUIGui extends WhatsappmodModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				GuiIsOpenProcedure.executeProcedure($_dependencies);
+				GuiIsOpenProcedure.screenIsOpen = true;
 			}
 		}
 

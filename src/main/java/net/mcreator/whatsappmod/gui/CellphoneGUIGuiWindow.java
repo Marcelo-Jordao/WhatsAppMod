@@ -2,6 +2,10 @@
 package net.mcreator.whatsappmod.gui;
 
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.GuiScreenEvent.MouseClickedEvent;
+import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.InputEvent.KeyInputEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
@@ -11,6 +15,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.java.games.input.Keyboard;
 import net.mcreator.whatsappmod.procedures.GuiIsOpenProcedure;
 import net.minecraft.client.Minecraft;
 
@@ -29,6 +34,21 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
 public class CellphoneGUIGuiWindow extends ContainerScreen<CellphoneGUIGui.GuiContainerMod> {
+	
+//	public static boolean keyIsPressed = false;
+//	public static int keyPressed = 0;
+//	
+//	public static boolean mouseIsClicked = false;
+//	public static double mouseXClick = 0;
+//	public static double mouseYClick = 0;
+//	public static int buttonMouseClick = 0;
+	
+	public static BufferedImage screenImg = null;
+	
+	private static boolean screenIsOpen;
+	
+	public static int initXScreen = 180;
+    public static int initYScreen = 55;
 	
 	private World world;
 	private int x, y, z;
@@ -90,18 +110,14 @@ public class CellphoneGUIGuiWindow extends ContainerScreen<CellphoneGUIGui.GuiCo
 //        try {
 //			ImageIO.write(loadingImg, "png", file);
 //		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
 //			e1.printStackTrace();
 //		}
     	
-	    BufferedImage screenImg = null;
 	    
-        try {
-        	screenImg = GuiIsOpenProcedure.buffImage;
-			}catch(Exception e){ System.out.println(e); }
+        //try {
+        //	screenImg = GuiIsOpenProcedure.buffImage;
+		//	}catch(Exception e){ System.out.println(e); }
 		
-        int initXScreen = 180;
-        int initYScreen = 55;
         
         if(screenImg == null) {
         	screenImg = loadingImg;
@@ -122,12 +138,31 @@ public class CellphoneGUIGuiWindow extends ContainerScreen<CellphoneGUIGui.GuiCo
                 //bits[x + y * w] = alpha | red | green | blue; 
                 AbstractGui.fill(ms, initXScreen+x, initYScreen+y, initXScreen+x+1, initYScreen+y+1, alpha | red | green | blue);
             }
-        }        	
-		
+        } 
+        
+        if(GuiIsOpenProcedure.keyIsPressed) {
+//        	System.out.println( keyPressed );
+        	GuiIsOpenProcedure.keyIsPressed = false;
+        }
+//        if(mouseIsClicked) {
+//        	System.out.println(mouseXClick + " , " + mouseYClick + " , " + buttonMouseClick);
+//        }
+        //System.out.println(mouseX + " , " + mouseY);
+        
+	}
+	
+	//
+	public static boolean getScreenIsOpen() {
+		//System.out.println(screenIsOpen);
+		return screenIsOpen;
 	}
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(MatrixStack ms, float partialTicks, int gx, int gy) {
+		
+		//se desenhou background do container eh pq a gui ta na tela
+		//System.out.println("draw background");
+		screenIsOpen = true;
 		
 		RenderSystem.color4f(1, 1, 1, 1);
 		RenderSystem.enableBlend();
@@ -139,25 +174,58 @@ public class CellphoneGUIGuiWindow extends ContainerScreen<CellphoneGUIGui.GuiCo
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 		RenderSystem.disableBlend();
+		
+		
 	}
 
 	@Override
 	public boolean keyPressed(int key, int b, int c) {
 		
 		//256 = esc , 69 = e
+		
 //		if (key == 256) {
 //			this.minecraft.player.closeScreen();
 //			return true;
 //		}
 //		return super.keyPressed(key, b, c);
 		//System.out.println(key);
+		
+		// o valor de key esta em caracter ASCII, para converter basta colocar (char) (key)
+		
+		GuiIsOpenProcedure.keyIsPressed = true;
+		GuiIsOpenProcedure.keyPressed = key;
+		
 		if(key == 256) {
 			this.minecraft.player.closeScreen();
+			screenIsOpen = false;
 			return true;
 		}
 		return false; 
 	}
-
+	
+	@Override
+	public boolean mouseClicked(double mouseX, double mouseY, int button) {
+		//button é 0 pra L_click, 1 pra R_click e 2 é o mouse3
+		GuiIsOpenProcedure.mouseIsClicked = true;
+		GuiIsOpenProcedure.mouseXClick = mouseX;
+		GuiIsOpenProcedure.mouseYClick = mouseY;
+		GuiIsOpenProcedure.buttonMouseClick = button;
+		
+//		System.out.println(mouseX + " ; " + mouseY + " ; " + button);
+		return false;
+	}
+	
+	@Override
+	public boolean mouseReleased(double mouseX, double mouseY, int button) {
+		
+		GuiIsOpenProcedure.mouseIsClicked = false;
+		GuiIsOpenProcedure.mouseXClick = 0;
+		GuiIsOpenProcedure.mouseYClick = 0;
+		GuiIsOpenProcedure.buttonMouseClick = 4;
+		
+		return false;
+	}
+	
 	@Override
 	public void tick() {
 		super.tick();

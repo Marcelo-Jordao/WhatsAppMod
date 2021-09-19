@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="Academic Free License v3.0"
+
+[[mods]]
+modId="whatsappmod"
+version="1.0.0"
+displayName="WhatsAppMod"
+credits="credits to eclipse"
+displayURL="https://mcreator.net"
+authors="Marelo"
+
+[[dependencies.whatsappmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

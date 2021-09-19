@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "whatsappmod:block/whats_app_ore"
+    }
+  }
+}
