@@ -1,10 +1,10 @@
 # WhatsAppMod
 
-Instalação:
+INSTALAÇÃO:
 
 Colocar a pasta driver na raiz de mods, junto com a build do mod
 
-MOD
+SOBRE O MOD
 
 Adiciona:
   
