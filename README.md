@@ -10,6 +10,7 @@ Adiciona:
   
   - Minerio do Zap
   - Ferramentas do Zap
+  - Armadura do Zap
   - Celular para acessar o Zap
 
 O Mod ainda esta na versão alpha, por isso contem diversos erros.
