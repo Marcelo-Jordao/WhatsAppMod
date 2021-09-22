@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
@@ -82,6 +83,7 @@ public class GuiIsOpenProcedure {
 				File stateFileForState = new File(sessionSaveStateFilePath);
 				try{ stateFileForState.createNewFile(); }catch(Exception e){System.out.println(e);}
 				
+				
 	       		//System.out.println("reachBrowser");
 				BrowserType firefox = playwright.firefox();
 				Browser browser = firefox.launch(new BrowserType.LaunchOptions()
@@ -89,18 +91,23 @@ public class GuiIsOpenProcedure {
 					);
 				BrowserContext context = browser.newContext( new Browser.NewContextOptions()
 					.setStorageStatePath(Paths.get(sessionSaveStateFilePath))
-					.setViewportSize(480, 380) // x2 por causa do GUI scale (será)
+					//.setViewportSize(480, 380) // x2 por causa do GUI scale (será) // se tornou desnecessario
 					.setDeviceScaleFactor(0.7)
 					);
 				context.clearPermissions();
-
+				
 				GuiIsOpenProcedure.browserIsActive = true;
 				
 				Page page = context.newPage();
 				page.navigate("https://web.whatsapp.com/");
 
-				page.setViewportSize( (int) (Math.round(480/0.7)) , (int) (Math.round(380/0.7)));
-				//System.out.println("before page screenshot");
+				int browserWidth = (int) (( (1-2*CellphoneGUIGuiWindow.xPadding)*(1-2*CellphoneGUIGuiWindow.xGuiPadding)*CellphoneGUIGuiWindow.screenWidth + CellphoneGUIGuiWindow.pixelsDeCorreçaoX)/0.7) ;
+				int browserHeight = (int) (( (1-2*CellphoneGUIGuiWindow.yPadding)*(1-2*CellphoneGUIGuiWindow.yGuiPadding)*CellphoneGUIGuiWindow.screenHeight + CellphoneGUIGuiWindow.pixelsDeCorreçaoY)/0.7) ;
+				
+				
+				//page.setViewportSize( (int) (Math.round(480/0.7)) , (int) (Math.round(380/0.7)));
+				page.setViewportSize( browserWidth , browserHeight);
+				
 				//page.pause();
 				//System.out.println("afterPause");
 				boolean noRetWhileScreen = false;
@@ -115,6 +122,8 @@ public class GuiIsOpenProcedure {
 				
 				//loop infinito de repeticao do playwrite (prototipo)
 				while(true) {
+					
+					page.mouse().move((CellphoneGUIGuiWindow.mouseXPos - initX)/0.7, (CellphoneGUIGuiWindow.mouseYPos - initY)/0.7);
 					
 					//imita o mouse na tela (drag e escroll so nao funciona)
 					if(mouseIsClicked) {
@@ -137,11 +146,8 @@ public class GuiIsOpenProcedure {
 						//page.click("#frame", new Page.ClickOptions().setPosition(mouseXClick-initX, mouseYClick-initY));
 						double xScreen = (mouseXClick - (double) (initX))/0.7;
 						double yScreen = (mouseYClick - (double) (initY))/0.7;
-						// a escala da tela afeta a posicao do mouse da pagina
+						// a escala da tela afeta a posicao do mouse na pagina
 						
-						//System.out.println( xScreen +" , "+ yScreen );
-						//System.out.println( xScreen); // +" = "+ mouseXClick +" - "+ initX);
-						//System.out.println( yScreen); // +" = "+ mouseYClick +" + "+ initY);
 						page.mouse().click(xScreen , yScreen , new Mouse.ClickOptions().setButton(buttonOnClick));
 						}
 					
@@ -182,15 +188,6 @@ public class GuiIsOpenProcedure {
 					//imprime a tela so se agui estiver aberta, e salva a sessao ao fechar gui
 					if(CellphoneGUIGuiWindow.getScreenIsOpen()) {
 						noRetWhileScreen = false;
-//						byte[] buffer = page.screenshot();
-//						//bufino = buffer;
-//						//System.out.println("after page screenshot");
-//						InputStream is = new ByteArrayInputStream(buffer);
-//						BufferedImage newBI = ImageIO.read(is);
-//						buffImage = newBI; 
-						// é a mesma coisa
-						//buffImage = ImageIO.read(new ByteArrayInputStream(page.screenshot()));
-						//System.out.println("gui na tela");
 						CellphoneGUIGuiWindow.screenImg = ImageIO.read(new ByteArrayInputStream(page.screenshot()));
 						
 					}else{
@@ -201,28 +198,16 @@ public class GuiIsOpenProcedure {
 						}
 					}
 					
-					//System.out.println("executou");
-					
-					//intervalo de tempo necessario, se nao o getScreenIsOpen nao retorna valor, ja que a taxa de atualizacao do GuiIsOpen é maior que a da window
+					//intervalo de tempo necessario, ja que a taxa de atualizacao do GuiIsOpen é maior que a da window
 					Thread.sleep(5);
 				}
 				
 				
-				//page.pause();
-
-				//detect when the browser is closed and save the session
-				//if(browser.contexts().size() == 0){
-//					System.out.println("session saved");
-//					context.storageState(new BrowserContext.StorageStateOptions().setPath(Paths.get(sessionSaveStateFilePath)));
-//					//page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("C:/Users/USER/Desktop/screenshot.png")));
-//					GuiIsOpenProcedure.browserIsActive = false;
-		//			}
 									
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	        //BufferedImage bi = newBI;
 	    }
 		
 	};

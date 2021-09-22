@@ -88,6 +88,7 @@ public class CellphoneItem extends WhatsappmodModElements.ModElement {
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
+		// aaaaaaaaaaaa
 
 		@Override
 		public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
